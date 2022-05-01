@@ -69,7 +69,8 @@ end
 
 ## level 03
 
-![](/img/93.png)
+![](/img/03.png)
+
 ### goal 01 ~ 03
 - same as level 02 but with one more client
 - calculated network address and range: [`104.198.197.0/25`](https://www.calculator.net/ip-subnet-calculator.html?cclass=any&csubnet=25&cip=104.198.197.125&ctype=ipv4&printit=0&x=88&y=9)
