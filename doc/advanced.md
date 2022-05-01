@@ -38,3 +38,26 @@
 - goal 05 would be same as 04
 ### goal 06
 - give I and R1 the network address of `C <-> R22`
+
+## level 10
+![](../img/10.png)
+### learn to
+- split existing address range (or CIDR) to get more network addresses
+
+#### `H21 <-> R11 <-> H11`
+- `R11`'s ip is fixed, so this network's address is `143.249.227.0/25`
+- however other networks need to share `143.249.227.x`, so low numbers would be nice
+
+#### `H41 <-> R23`,
+- R23's address is given
+- network address: `143.249.227.128/26`
+- also it's already listed on R1's routing table
+
+#### `R22 <-> H31`
+- at first looks like it would be same as `H41 <-> R23`, however there are multiple problems if network address is `143.249.227.192/26`:
+  - on goal 4 and goal 7, R2 would send any packet to `143.249.227.254` (hence routing table) and H31 would catch it, causing error
+- so CIDR needs to be narrowed into `143.249.227.192/27`, where ranges are `143.249.227.{193 ~ 222}`
+
+#### goal 05 ~ 06
+- `143.249.227.128/26` would capture ranges of `143.249.227.{129 ~ 190}`
+- that does not include ip of H3, so it needs to be added to R1's routing table
