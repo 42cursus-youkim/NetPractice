@@ -54,4 +54,6 @@ korean translation comming soon (ish)
 
 ### [Basics: subnet mask, network address, and ip range](doc/basic.md)
 
-### [Intermidiate: routing, routing table](doc/intermediate.md)
+### [Intermidiate: routing, routing table, network address overlap](doc/intermediate.md)
+
+### [Advanced: multiple different CIDR](doc/advanced.md)

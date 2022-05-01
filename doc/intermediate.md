@@ -66,11 +66,11 @@
 - R11 and R12's network ips both share `109.198.14`
   - so CIDR of can't be `/24` or both will overlap
   - for convenience, all networks would have `/26` and share `109.198.14`
-  - then viable networks are: [`109.108.14.{0, 64, 128, 192}`](https://www.calculator.net/ip-subnet-calculator.html?cclass=any&csubnet=26&cip=109.198.14.0&ctype=ipv4&printit=0&x=94&y=12)
+  - then viable network addresses are: [`109.108.14.{0, 64, 128, 192}`](https://www.calculator.net/ip-subnet-calculator.html?cclass=any&csubnet=26&cip=109.198.14.0&ctype=ipv4&printit=0&x=94&y=12)
   - so for A1 and R11, `109.108.14.0/26`
 
 #### R12 <-> R21
-- by looking at R12, network address must be `109.198.14.192`
+- since R12's last digits are 254, network address must be `109.198.14.192/26`
 
 ### R122 <-> C1
 - choose between `109.108.14.{64, 128}` since others are taken
