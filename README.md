@@ -2,7 +2,10 @@
 
 internet protocol or: how i learned to stop worrying and love the router
 
+
+[references](https://github.com/lpaube/NetPractice)
 korean translation comming soon (ish)
+
 
 ## Things to remember
 
@@ -24,9 +27,9 @@ korean translation comming soon (ish)
 - first and last of an address range is reserved
   - first: network ID address
   - last: broadcast address
+
 ### Interface
 
-- lines connecting internet devices are a lie! (maybe?)
 - network is like shouting numbers at each other
 - so individual's address must not overlap with others
 - interfaces will decide to only listen to numbers within their range
@@ -50,11 +53,9 @@ korean translation comming soon (ish)
 ## levels
 
 ### level 01
-<details>
-    <summary>screenshot</summary>
-    <img src="img/01.png" />
-</details>
+![](img/01.png)
 
+<!---
 ```mermaid
 flowchart BT
 subgraph goal02
@@ -68,25 +69,24 @@ subgraph goal01
     A1["ip:???\nCIDR:/24"]  -.- |interface A1| A{{"client A"}}
 end
 ```
+-->
 
 #### goal 01
 - A and B are on the same network, so their network address must match
-- since B's address is 104.98.23.12 and CIDR is /24 -> network address: `104.98.23.0`
-- any ip address within `104.98.23.1 ~ 104.98.23.254` are within samw network 'called' `104.98.23.0`
+- since B's address is 104.98.23.12 and CIDR is `/24` -> network address: `104.98.23.0`
+- any ip address within `104.98.23.{1 ~ 254}` are within samw network 'called' `104.98.23.0`
 - address of A can be anything within above range
 - except B's, because how are you gonna distinguish between same addresses
 
 #### goal 02
-- same as goal 01 but CIDR is /16
-- so they will listen to any ip address within `211.191.0.1 ~ 211.191.255.254`
+- same as goal 01 but CIDR is `/16`
+- so they will listen to any ip address within `211.191.{0.1 ~ 255.254}`
 - same as goal01
 
 ### level 02
-<details>
-    <summary>screenshot</summary>
-    <img src="img/02.png" />
-</details>
+![](img/02.png)
 
+<!---
 ```mermaid
 flowchart BT
 subgraph goal02
@@ -100,6 +100,32 @@ subgraph goal01
     A1["ip:???\nCIDR:/27"]  -.- |interface A1| A{{"client A"}}
 end
 ```
+-->
 
 #### goal 01
-- client A will listen to `
+- client A and B's subnet mask should match -> `/27`
+- there can be 8 possible network address with usable range of 30 for `/27`
+  - `xxx.xxx.xxx.{0, 32, 64, 96, 128, 160, 192, 224}`
+  - since B's last digits are 222 -> `192.168.63.192/27`
+- A's address can be within `192.168.63.{193 ~ 221}`
+
+#### goal 02
+- same as goal 01 but CIDR is `/30`
+- 64 possible network address with usable range of 2 for `/30`
+  - `xxx.xxx.xxx.{0, 4, 8 ... 252}`
+  - address can be same as goal 01 because these are seperate networks
+
+### level 03
+
+![](img/93.png)
+#### goal 01 ~ 03
+- same as level 02 but with one more client
+- calculated network address and range: [`104.198.197.0/25`](https://www.calculator.net/ip-subnet-calculator.html?cclass=any&csubnet=25&cip=104.198.197.125&ctype=ipv4&printit=0&x=88&y=9)
+  - which means usable host ip range: `104.198.197.1 ~ 104.198.197.126`
+- just don't make their ip overlap
+
+### level 04
+![](img/04.png)
+#### goal 01 ~ 03
+- since all masks are empty -> `75.227.117.0/24` will be easiest
+  - host ip range: `75.227.117.{1 ~ 254}`
