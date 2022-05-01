@@ -54,4 +54,4 @@ korean translation comming soon (ish)
 
 ### [Basics: subnet mask, network address, and ip range](doc/basic.md)
 
-### [Intermidiate: routing](doc/intermediate.md)
+### [Intermidiate: routing, routing table](doc/intermediate.md)

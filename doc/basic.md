@@ -1,12 +1,7 @@
-# Basics
-
-learn to
-- get network address by applying subnet mask to ip
-- find viable ip ranges
-- make ips in same network different
-
+# Basic
 
 ## level 01
+
 ![](/img/01.png)
 
 <!---
@@ -24,13 +19,16 @@ subgraph goal01
 end
 ```
 -->
+### learn to
+- make ips distinct in same network
+- get network address by applying subnet mask to ip
 
 ### goal 01
 - A and B are on the same network, so their network address must match
-- since B's address is 104.98.23.12 and CIDR is `/24` -> network address: `104.98.23.0`
-- any ip address within `104.98.23.{1 ~ 254}` are within samw network 'called' `104.98.23.0`
-- address of A can be anything within above range
-- except B's, because how are you gonna distinguish between same addresses
+- by applying subnet mask `/24` to B's ip, you get `104.98.23.0/24`
+- any ip address within `104.98.23.{1 ~ 254}` are within the same network, `104.98.23.0`
+- so ip of A should be within the above range
+- except B's (`104.98.23.12`), because how are you gonna distinguish between same addresses
 
 ### goal 02
 - same as goal 01 but CIDR is `/16`
@@ -83,3 +81,5 @@ end
 ### goal 01 ~ 03
 - since all masks are empty -> `75.227.117.0/24` will be easiest
   - host ip range: `75.227.117.{1 ~ 254}`
+- just don't make them overlap
+- there will be more after having other interfaces...
