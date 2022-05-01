@@ -1,4 +1,4 @@
 {
-  "MarkdownPaste.nameBase": "${workspaceRoot}/img/${datetime}",
+  "MarkdownPaste.nameBase": "../img/${datetime}",
   "git.allowForcePush": true
 }
