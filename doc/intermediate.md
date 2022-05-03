@@ -1,7 +1,7 @@
 # Intermediate
 
 ## level 05
-![](home/scarf/Repo/netpractice/img/05.png)
+![](../img/05.png)
 
 ### learn to
 - use multiple different network addresses
@@ -30,7 +30,7 @@
 - it's the same as A -> B
 
 ## level 06
-![](home/scarf/Repo/netpractice/img/06.png)
+![](../img/06.png)
 
 ### learn to
 - send to and from internet using routing table
@@ -54,7 +54,7 @@
 - no more need to provide network address from here since R knows A
 
 ## level 07
-![](/img/07.png)
+![](../img/07.png)
 ### learn to
 - keep multiple network addresses from overlapping
 ### goal 01
