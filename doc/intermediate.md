@@ -72,5 +72,5 @@
 #### R12 <-> R21
 - since R12's last digits are 254, network address must be `109.198.14.192/26`
 
-### R122 <-> C1
+#### R122 <-> C1
 - choose between `109.108.14.{64, 128}` since others are taken
