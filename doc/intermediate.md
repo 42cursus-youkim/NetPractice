@@ -39,7 +39,7 @@
 ### goal 01
 
 #### A -> I
-- A needs to send packet (destination `8.8.8.8`) to in internet but does not know how
+- A needs to send packet (destination `8.8.8.8`) to internet but does not know how
 - ideal path would be `A1 -> S -> R1 -> R2 -> I`
 - A should send the packet to R1 using its routing table
 - R does not know where the packet would go either, so it should send it to R2
@@ -63,8 +63,8 @@
   - there are 3 of them, `A <-> R1`, `R1 <-> R2`, `C <-> R2`
 
 #### R11 <-> A1
-- R11 and R12's network ips both share `109.198.14`
-  - so CIDR of can't be `/24` or both will overlap
+- R11 and R12's network ips both share `109.198.14.xxx`
+  - so CIDR can't be `/24` or both will overlap
   - for convenience, all networks would have `/26` and share `109.198.14`
   - then viable network addresses are: [`109.108.14.{0, 64, 128, 192}`](https://www.calculator.net/ip-subnet-calculator.html?cclass=any&csubnet=26&cip=109.198.14.0&ctype=ipv4&printit=0&x=94&y=12)
   - so for A1 and R11, `109.108.14.0/26`
